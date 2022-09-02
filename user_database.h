@@ -7,28 +7,28 @@
 #include "json.hpp"
 using json = nlohmann::json;
 
-/*
-    @brief Prompt the user for password input. Once received, load the "password" parameter with this new data.
-    @param password_setup: When true, the user will be prompted twice to confirm their password (used when setting up a password).
-    @param password: The configured password will be loaded into this string reference.
-    @return The hash of the password.
-*/
+/**
+ *  @brief Prompt the user for password input. Once received, load the "password" parameter with this new data.
+ *  @param password_setup: When true, the user will be prompted twice to confirm their password (used when setting up a password).
+ *  @param password: The configured password will be loaded into this string reference.
+ *  @return The hash of the password.
+ */
 size_t get_password(std::string& password, bool password_setup);
 
 
-/*
-    @brief Prompt the user to enter a username, which will be loaded into parameter "username".
-    @param username: output of this function is stored in this variable.
-    @return 0 if the user enters "quit", else 1.
-*/
+/**
+ *  @brief Prompt the user to enter a username, which will be loaded into parameter "username".
+ *  @param username: output of this function is stored in this variable.
+ *  @return 0 if the user enters "quit", else 1.
+ */
 int get_username(std::string& username);
 
 
-/*
-    @brief Prompts the user to enter their age, which will be loaded into parameter "age".
-    @param age: Output of this function.
-    @return 0 if the user typed "quit" else 1. 
-*/
+/**
+ *  @brief Prompts the user to enter their age, which will be loaded into parameter "age".
+ *  @param age: Output of this function.
+ *  @return 0 if the user typed "quit" else 1. 
+ */
 int get_age(int& age);
 
 /**
@@ -43,7 +43,7 @@ int get_age(int& age);
 int get_user_data(std::string& username, std::string& password, int& age, bool ask_for_age, bool password_setup = false);
 
 /**
- *  @brief Prompt the user to input "y" or "n". IF invalid, keep prompting for input in the terminal.
+ *  @brief Prompt the user to input "y" or "n". If invalid, keep prompting for input in the terminal.
  *  @return -1 if user enters "quit", 1 of user enters "y", 0 for "n".
  */
 int get_user_choice();
@@ -59,7 +59,7 @@ int admin_menu(json& data);
 
 /**
  *  @brief Display all options for the current menu.  
- *  @param menu_type: The type of help menu to show. Valid type are "admin", "user", and "invalid_login".
+ *  @param menu_type: The type of help menu to show. Valid types are "admin", "user", and "invalid_login".
  */
 void show_help_menu(std::string_view menu_type);
 
